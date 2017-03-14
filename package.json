@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "STOMP server implementation for RadioVis",
   "main": "index.js",
+  "bin": "./bin/radiovis-stomp-server",
   "scripts": {
     "test": "standard && mocha"
   },
@@ -20,6 +21,9 @@
     "url": "https://github.com/bbc/node-radiovis-stomp-server/issues"
   },
   "homepage": "https://github.com/bbc/node-radiovis-stomp-server#readme",
+  "dependencies": {
+    "uuid": "~3.0.1"
+  },
   "devDependencies": {
     "standard": "*",
     "mocha": "*"
