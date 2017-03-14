@@ -1,221 +1,219 @@
 {
-  "services": {
-    "bbc_radio_one": {
-      "name": "BBC Radio 1",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_one.png",
-      "default_link_url": "http://www.bbc.co.uk/radio1",
-      "bearers": [
-        "dab:ce1.ce15.c221.0",
-        "fm:ce1.c201.09710",
-        "fm:ce1.c201.09770",
-        "fm:ce1.c201.09780",
-        "fm:ce1.c201.09790",
-        "fm:ce1.c201.09800",
-        "fm:ce1.c201.09810",
-        "fm:ce1.c201.09820",
-        "fm:ce1.c201.09830",
-        "fm:ce1.c201.09840",
-        "fm:ce1.c201.09850",
-        "fm:ce1.c201.09860",
-        "fm:ce1.c201.09870",
-        "fm:ce1.c201.09880",
-        "fm:ce1.c201.09890",
-        "fm:ce1.c201.09900",
-        "fm:ce1.c201.09910",
-        "fm:ce1.c201.09920",
-        "fm:ce1.c201.09930",
-        "fm:ce1.c201.09940",
-        "fm:ce1.c201.09950",
-        "fm:ce1.c201.09960",
-        "fm:ce1.c201.09970",
-        "fm:ce1.c201.09980"
-      ]
-    },
-    "bbc_radio_two": {
-      "name": "BBC Radio 2",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_two.png",
-      "default_link_url": "http://www.bbc.co.uk/radio2",
-      "bearers": [
-        "dab:ce1.ce15.c222.0",
-        "fm:ce1.c202.08810",
-        "fm:ce1.c202.08820",
-        "fm:ce1.c202.08830",
-        "fm:ce1.c202.08840",
-        "fm:ce1.c202.08850",
-        "fm:ce1.c202.08860",
-        "fm:ce1.c202.08870",
-        "fm:ce1.c202.08880",
-        "fm:ce1.c202.08890",
-        "fm:ce1.c202.08900",
-        "fm:ce1.c202.08910",
-        "fm:ce1.c202.08920",
-        "fm:ce1.c202.08930",
-        "fm:ce1.c202.08940",
-        "fm:ce1.c202.08950",
-        "fm:ce1.c202.08960",
-        "fm:ce1.c202.08970",
-        "fm:ce1.c202.08980",
-        "fm:ce1.c202.08990",
-        "fm:ce1.c202.09000",
-        "fm:ce1.c202.09010",
-        "fm:ce1.c202.09020"
-      ]
-    },
-    "bbc_radio_three": {
-      "name": "BBC Radio 3",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_three.png",
-      "default_link_url": "http://www.bbc.co.uk/radio3",
-      "bearers": [
-        "dab:ce1.ce15.c223.0",
-        "fm:ce1.c203.09020",
-        "fm:ce1.c203.09030",
-        "fm:ce1.c203.09040",
-        "fm:ce1.c203.09050",
-        "fm:ce1.c203.09060",
-        "fm:ce1.c203.09070",
-        "fm:ce1.c203.09080",
-        "fm:ce1.c203.09090",
-        "fm:ce1.c203.09100",
-        "fm:ce1.c203.09110",
-        "fm:ce1.c203.09120",
-        "fm:ce1.c203.09130",
-        "fm:ce1.c203.09140",
-        "fm:ce1.c203.09150",
-        "fm:ce1.c203.09160",
-        "fm:ce1.c203.09170",
-        "fm:ce1.c203.09180",
-        "fm:ce1.c203.09190",
-        "fm:ce1.c203.09200",
-        "fm:ce1.c203.09210",
-        "fm:ce1.c203.09220",
-        "fm:ce1.c203.09230",
-        "fm:ce1.c203.09240",
-        "fm:ce1.c203.09260"
-      ]
-    },
-    "bbc_radio_fourfm": {
-      "name": "BBC Radio 4",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_four.png",
-      "default_link_url": "http://www.bbc.co.uk/radio4",
-      "bearers": [
-        "dab:ce1.ce15.c224.0",
-        "fm:ce1.c204.09250",
-        "fm:ce1.c204.09260",
-        "fm:ce1.c204.09270",
-        "fm:ce1.c204.09280",
-        "fm:ce1.c204.09290",
-        "fm:ce1.c204.09300",
-        "fm:ce1.c204.09310",
-        "fm:ce1.c204.09320",
-        "fm:ce1.c204.09330",
-        "fm:ce1.c204.09340",
-        "fm:ce1.c204.09350",
-        "fm:ce1.c204.09360",
-        "fm:ce1.c204.09370",
-        "fm:ce1.c204.09380",
-        "fm:ce1.c204.09390",
-        "fm:ce1.c204.09400",
-        "fm:ce1.c204.09410",
-        "fm:ce1.c204.09420",
-        "fm:ce1.c204.09430",
-        "fm:ce1.c204.09440",
-        "fm:ce1.c204.09450",
-        "fm:ce1.c204.09460",
-        "fm:ce1.c204.09470",
-        "fm:ce1.c204.09480",
-        "fm:ce1.c204.09490",
-        "fm:ce1.c204.09500",
-        "fm:ce1.c204.09510",
-        "fm:ce1.c204.09520",
-        "fm:ce1.c204.09530",
-        "fm:ce1.c204.09550",
-        "fm:ce1.c204.09560",
-        "fm:ce1.c204.09570",
-        "fm:ce1.c204.09580",
-        "fm:ce1.c204.09590",
-        "fm:ce1.c204.09600",
-        "fm:ce1.c204.09610",
-        "fm:ce1.c204.10350",
-        "fm:ce1.c204.10360",
-        "fm:ce1.c204.10370",
-        "fm:ce1.c204.10380",
-        "fm:ce1.c204.10390",
-        "fm:ce1.c204.10400",
-        "fm:ce1.c204.10410",
-        "fm:ce1.c204.10430",
-        "fm:ce1.c204.10440",
-        "fm:ce1.c204.10450",
-        "fm:ce1.c204.10460",
-        "fm:ce1.c204.10470",
-        "fm:ce1.c204.10480",
-        "fm:ce1.c204.10490"
-      ]
-    },
-    "bbc_1xtra": {
-      "name": "BBC Radio 1Xtra",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_1xtra.png",
-      "default_link_url": "http://www.bbc.co.uk/1xtra",
-      "bearers": [
-        "dab:ce1.ce15.c22a.0"
-      ]
-    },
-    "bbc_radio_five_live": {
-      "name": "BBC Radio 5 live",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_five_live.png",
-      "default_link_url": "http://www.bbc.co.uk/5live",
-      "bearers": [
-        "dab:ce1.ce15.c225.0"
-      ]
-    },
-    "bbc_radio_five_live_sports_extra": {
-      "id": "bbc_radio_five_live_sports_extra",
-      "name": "BBC R5 live sports extra",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_five_live_sports_extra.png",
-      "default_link_url": "http://www.bbc.co.uk/5livesportsextra",
-      "bearers": [
-        "dab:ce1.ce15.c228.0",
-        "dab:ce1.ce15.c225.3"
-      ]
-    },
-    "bbc_6music": {
-      "name": "BBC Radio 6 music",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_6music.png",
-      "default_link_url": "http://www.bbc.co.uk/6music",
-      "bearers": [
-        "dab:ce1.ce15.c22b.0"
-      ]
-    },
-    "bbc_asian_network": {
-      "name": "BBC Asian Network",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_asian_network.png",
-      "default_link_url": "http://www.bbc.co.uk/asiannetwork",
-      "bearers": [
-        "dab:ce1.ce15.c236.0"
-      ]
-    },
-    "bbc_radio_fourlw": {
-      "name": "BBC Radio 4 LW",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_four.png",
-      "default_link_url": "http://www.bbc.co.uk/radio4",
-      "bearers": [
-        "dab:ce1.ce15.c224.1"
-      ]
-    },
-    "bbc_radio_four_extra": {
-      "name": "BBC Radio 4 Extra",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_four_extra.png",
-      "default_link_url": "http://www.bbc.co.uk/radio4extra",
-      "bearers": [
-        "dab:ce1.ce15.c22c.0"
-      ]
-    },
-    "bbc_world_service": {
-      "name": "BBC World Service",
-      "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_world_service.png",
-      "default_link_url": "http://www.bbc.co.uk/worldserviceradio",
-      "bearers": [
-        "dab:ce1.ce15.c238.0"
-      ]
-    }
+  "bbc_radio_one": {
+    "name": "BBC Radio 1",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_one.png",
+    "default_link_url": "http://www.bbc.co.uk/radio1",
+    "bearers": [
+      "dab:ce1.ce15.c221.0",
+      "fm:ce1.c201.09710",
+      "fm:ce1.c201.09770",
+      "fm:ce1.c201.09780",
+      "fm:ce1.c201.09790",
+      "fm:ce1.c201.09800",
+      "fm:ce1.c201.09810",
+      "fm:ce1.c201.09820",
+      "fm:ce1.c201.09830",
+      "fm:ce1.c201.09840",
+      "fm:ce1.c201.09850",
+      "fm:ce1.c201.09860",
+      "fm:ce1.c201.09870",
+      "fm:ce1.c201.09880",
+      "fm:ce1.c201.09890",
+      "fm:ce1.c201.09900",
+      "fm:ce1.c201.09910",
+      "fm:ce1.c201.09920",
+      "fm:ce1.c201.09930",
+      "fm:ce1.c201.09940",
+      "fm:ce1.c201.09950",
+      "fm:ce1.c201.09960",
+      "fm:ce1.c201.09970",
+      "fm:ce1.c201.09980"
+    ]
+  },
+  "bbc_radio_two": {
+    "name": "BBC Radio 2",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_two.png",
+    "default_link_url": "http://www.bbc.co.uk/radio2",
+    "bearers": [
+      "dab:ce1.ce15.c222.0",
+      "fm:ce1.c202.08810",
+      "fm:ce1.c202.08820",
+      "fm:ce1.c202.08830",
+      "fm:ce1.c202.08840",
+      "fm:ce1.c202.08850",
+      "fm:ce1.c202.08860",
+      "fm:ce1.c202.08870",
+      "fm:ce1.c202.08880",
+      "fm:ce1.c202.08890",
+      "fm:ce1.c202.08900",
+      "fm:ce1.c202.08910",
+      "fm:ce1.c202.08920",
+      "fm:ce1.c202.08930",
+      "fm:ce1.c202.08940",
+      "fm:ce1.c202.08950",
+      "fm:ce1.c202.08960",
+      "fm:ce1.c202.08970",
+      "fm:ce1.c202.08980",
+      "fm:ce1.c202.08990",
+      "fm:ce1.c202.09000",
+      "fm:ce1.c202.09010",
+      "fm:ce1.c202.09020"
+    ]
+  },
+  "bbc_radio_three": {
+    "name": "BBC Radio 3",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_three.png",
+    "default_link_url": "http://www.bbc.co.uk/radio3",
+    "bearers": [
+      "dab:ce1.ce15.c223.0",
+      "fm:ce1.c203.09020",
+      "fm:ce1.c203.09030",
+      "fm:ce1.c203.09040",
+      "fm:ce1.c203.09050",
+      "fm:ce1.c203.09060",
+      "fm:ce1.c203.09070",
+      "fm:ce1.c203.09080",
+      "fm:ce1.c203.09090",
+      "fm:ce1.c203.09100",
+      "fm:ce1.c203.09110",
+      "fm:ce1.c203.09120",
+      "fm:ce1.c203.09130",
+      "fm:ce1.c203.09140",
+      "fm:ce1.c203.09150",
+      "fm:ce1.c203.09160",
+      "fm:ce1.c203.09170",
+      "fm:ce1.c203.09180",
+      "fm:ce1.c203.09190",
+      "fm:ce1.c203.09200",
+      "fm:ce1.c203.09210",
+      "fm:ce1.c203.09220",
+      "fm:ce1.c203.09230",
+      "fm:ce1.c203.09240",
+      "fm:ce1.c203.09260"
+    ]
+  },
+  "bbc_radio_fourfm": {
+    "name": "BBC Radio 4",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_four.png",
+    "default_link_url": "http://www.bbc.co.uk/radio4",
+    "bearers": [
+      "dab:ce1.ce15.c224.0",
+      "fm:ce1.c204.09250",
+      "fm:ce1.c204.09260",
+      "fm:ce1.c204.09270",
+      "fm:ce1.c204.09280",
+      "fm:ce1.c204.09290",
+      "fm:ce1.c204.09300",
+      "fm:ce1.c204.09310",
+      "fm:ce1.c204.09320",
+      "fm:ce1.c204.09330",
+      "fm:ce1.c204.09340",
+      "fm:ce1.c204.09350",
+      "fm:ce1.c204.09360",
+      "fm:ce1.c204.09370",
+      "fm:ce1.c204.09380",
+      "fm:ce1.c204.09390",
+      "fm:ce1.c204.09400",
+      "fm:ce1.c204.09410",
+      "fm:ce1.c204.09420",
+      "fm:ce1.c204.09430",
+      "fm:ce1.c204.09440",
+      "fm:ce1.c204.09450",
+      "fm:ce1.c204.09460",
+      "fm:ce1.c204.09470",
+      "fm:ce1.c204.09480",
+      "fm:ce1.c204.09490",
+      "fm:ce1.c204.09500",
+      "fm:ce1.c204.09510",
+      "fm:ce1.c204.09520",
+      "fm:ce1.c204.09530",
+      "fm:ce1.c204.09550",
+      "fm:ce1.c204.09560",
+      "fm:ce1.c204.09570",
+      "fm:ce1.c204.09580",
+      "fm:ce1.c204.09590",
+      "fm:ce1.c204.09600",
+      "fm:ce1.c204.09610",
+      "fm:ce1.c204.10350",
+      "fm:ce1.c204.10360",
+      "fm:ce1.c204.10370",
+      "fm:ce1.c204.10380",
+      "fm:ce1.c204.10390",
+      "fm:ce1.c204.10400",
+      "fm:ce1.c204.10410",
+      "fm:ce1.c204.10430",
+      "fm:ce1.c204.10440",
+      "fm:ce1.c204.10450",
+      "fm:ce1.c204.10460",
+      "fm:ce1.c204.10470",
+      "fm:ce1.c204.10480",
+      "fm:ce1.c204.10490"
+    ]
+  },
+  "bbc_1xtra": {
+    "name": "BBC Radio 1Xtra",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_1xtra.png",
+    "default_link_url": "http://www.bbc.co.uk/1xtra",
+    "bearers": [
+      "dab:ce1.ce15.c22a.0"
+    ]
+  },
+  "bbc_radio_five_live": {
+    "name": "BBC Radio 5 live",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_five_live.png",
+    "default_link_url": "http://www.bbc.co.uk/5live",
+    "bearers": [
+      "dab:ce1.ce15.c225.0"
+    ]
+  },
+  "bbc_radio_five_live_sports_extra": {
+    "id": "bbc_radio_five_live_sports_extra",
+    "name": "BBC R5 live sports extra",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_five_live_sports_extra.png",
+    "default_link_url": "http://www.bbc.co.uk/5livesportsextra",
+    "bearers": [
+      "dab:ce1.ce15.c228.0",
+      "dab:ce1.ce15.c225.3"
+    ]
+  },
+  "bbc_6music": {
+    "name": "BBC Radio 6 music",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_6music.png",
+    "default_link_url": "http://www.bbc.co.uk/6music",
+    "bearers": [
+      "dab:ce1.ce15.c22b.0"
+    ]
+  },
+  "bbc_asian_network": {
+    "name": "BBC Asian Network",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_asian_network.png",
+    "default_link_url": "http://www.bbc.co.uk/asiannetwork",
+    "bearers": [
+      "dab:ce1.ce15.c236.0"
+    ]
+  },
+  "bbc_radio_fourlw": {
+    "name": "BBC Radio 4 LW",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_four.png",
+    "default_link_url": "http://www.bbc.co.uk/radio4",
+    "bearers": [
+      "dab:ce1.ce15.c224.1"
+    ]
+  },
+  "bbc_radio_four_extra": {
+    "name": "BBC Radio 4 Extra",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_four_extra.png",
+    "default_link_url": "http://www.bbc.co.uk/radio4extra",
+    "bearers": [
+      "dab:ce1.ce15.c22c.0"
+    ]
+  },
+  "bbc_world_service": {
+    "name": "BBC World Service",
+    "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_world_service.png",
+    "default_link_url": "http://www.bbc.co.uk/worldserviceradio",
+    "bearers": [
+      "dab:ce1.ce15.c238.0"
+    ]
   }
 }
