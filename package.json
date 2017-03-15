@@ -5,7 +5,9 @@
   "main": "index.js",
   "bin": "./bin/radiovis-stomp-server",
   "scripts": {
-    "test": "standard && mocha"
+    "start": "node ./bin/radiovis-stomp-server",
+    "test": "standard && mocha",
+    "spec": "speculate"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,8 @@
   },
   "devDependencies": {
     "standard": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "speculate": "*"
   },
   "standard": {
     "env": [ "mocha" ]

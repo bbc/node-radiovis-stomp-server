@@ -7,6 +7,12 @@ lib-cov
 *.pid
 *.gz
 
+radiovis-stomp-server.service
+RPMS/
+SPECS/
+SRPMS/
+SOURCES/
+
 pids
 logs
 results
