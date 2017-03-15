@@ -1,0 +1,18 @@
+{
+    "parameters": {
+        "BastionAccessSecurityGroup": "sg-88fdbeed",
+        "PublicSubnet": "subnet-5ed00b07",
+        "VpcId": "vpc-6c1ebc09",
+        "DnsEntry": "radiovis-stomp.test",
+        "Environment": "test",
+        "KeyName": "cosmos",
+        "ImageId": "ami-70edb016",
+        "DomainNameBase": "d7825165e8678905.xhst.bbci.co.uk.",
+        "InstanceType": "t2.micro"
+    },
+    "meta": {
+        "awsAccountId": "253011676286",
+        "isServiceStack": true,
+        "region": "eu-west-1"
+    }
+}

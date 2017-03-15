@@ -1,0 +1,198 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "RadioVis STOMP server instance",
+    "Parameters": {
+        "BastionAccessSecurityGroup": {
+            "Description": "The security group that permits access from the bastions",
+            "Type": "String"
+        },
+        "DnsEntry": {
+            "Description": "The DNS name for the component",
+            "Type": "String",
+            "Default": "radiovis-stomp"
+        },
+        "DomainNameBase": {
+            "Description": "The {account_hash}.xhst.bbci.co.uk domain (ending with a '.') under which new DNS entries are added",
+            "Type": "String"
+        },
+        "Environment": {
+            "AllowedValues": [
+                "int",
+                "test",
+                "live"
+            ],
+            "Description": "The name of the environment.",
+            "Type": "String"
+        },
+        "ImageId": {
+            "Description": "The AMI to use for this component",
+            "Type": "String",
+            "Default": "ami-70edb016"
+        },
+        "InstanceType": {
+            "Description": "Type of EC2 instance",
+            "Type": "String",
+            "Default": "t2.micro"
+        },
+        "KeyName": {
+            "Description": "Name of existing EC2 keypair to enable SSH access to the created instances",
+            "Type": "AWS::EC2::KeyPair::KeyName",
+            "ConstraintDescription": "must be the name of an existing EC2 KeyPair.",
+            "Default": "cosmos"
+        },
+        "PublicSubnet": {
+            "Description": "The ID of the private subnet",
+            "Type": "String"
+        },
+        "VpcId": {
+            "Description": "The ID of the VPC to attach the environment to",
+            "Type": "String"
+        }
+    },
+    "Resources": {
+        "ComponentDNS": {
+            "Type": "AWS::Route53::RecordSet",
+            "Properties": {
+                "HostedZoneName": {
+                    "Ref": "DomainNameBase"
+                },
+                "Name": {
+                    "Fn::Join": [
+                        ".", [{
+                            "Ref": "DnsEntry"
+                        }, {
+                            "Ref": "DomainNameBase"
+                        }]
+                    ]
+                },
+                "ResourceRecords": [{
+                    "Fn::GetAtt": [
+                        "Instance",
+                        "PublicIp"
+                    ]
+                }],
+                "TTL": 60,
+                "Type": "A"
+            }
+        },
+        "ComponentPolicy": {
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyDocument": {
+                    "Statement": [{
+                        "Action": [
+                            "sts:AssumeRole"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": [
+                            "*"
+                        ]
+                    }, {
+                        "Action": [
+                            "cloudwatch:*"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": [
+                            "*"
+                        ]
+                    }, {
+                        "Action": [
+                            "cloudformation:Describe*"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": [
+                            "*"
+                        ]
+                    }, {
+                        "Action": [
+                            "ec2:Describe*"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": [
+                            "*"
+                        ]
+                    }]
+                },
+                "PolicyName": "ComponentPolicy",
+                "Roles": [{
+                    "Ref": "Role"
+                }]
+            }
+        },
+        "ComponentSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "The RadioVis STOMP server security group",
+                "SecurityGroupIngress": [{
+                    "IpProtocol": "tcp",
+                    "FromPort": "61613",
+                    "ToPort": "61613",
+                    "CidrIp": "0.0.0.0/0"
+                }],
+                "VpcId": {
+                    "Ref": "VpcId"
+                }
+            }
+        },
+        "Instance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "AvailabilityZone": "eu-west-1a",
+                "IamInstanceProfile": {
+                    "Ref": "Profile"
+                },
+                "ImageId": {
+                    "Ref": "ImageId"
+                },
+                "InstanceType": {
+                    "Ref": "InstanceType"
+                },
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "Monitoring": "true",
+                "NetworkInterfaces": [{
+                    "AssociatePublicIpAddress": "true",
+                    "DeleteOnTermination": "true",
+                    "DeviceIndex": 0,
+                    "GroupSet": [{
+                        "Ref": "ComponentSecurityGroup"
+                    }, {
+                        "Ref": "BastionAccessSecurityGroup"
+                    }],
+                    "SubnetId": {
+                        "Ref": "PublicSubnet"
+                    }
+                }]
+            }
+        },
+        "Profile": {
+            "Type": "AWS::IAM::InstanceProfile",
+            "Properties": {
+                "Path": "/",
+                "Roles": [{
+                    "Ref": "Role"
+                }]
+            }
+        },
+        "Role": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Statement": [{
+                        "Action": [
+                            "sts:AssumeRole"
+                        ],
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": [
+                                "ec2.amazonaws.com"
+                            ]
+                        }
+                    }]
+                },
+                "Path": "/"
+            }
+        }
+    }
+}

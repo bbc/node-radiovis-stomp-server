@@ -1,0 +1,54 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "RadioVis Stomp DNS Template",
+    "Parameters": {
+        "Backend": {
+            "Description": "Backend hostname for your component (e.g. \"[component-name].[env.]account-identifier.xhst.bbci.co.uk\").",
+            "Type": "String"
+        },
+        "ComponentName": {
+            "Description": "The component name for your dns entry",
+            "Type": "String"
+        },
+        "Environment": {
+            "AllowedPattern": "\\.(?:(?!live\\.)\\w+\\.)?",
+            "Default": ".",
+            "Description": "Environment name with leading and trailing dots, (e.g. \".int.\"), for live use \".\"",
+            "Type": "String"
+        },
+        "HostedZoneName": {
+            "AllowedPattern": ".*\\.",
+            "Default": "api.bbci.co.uk.",
+            "Description": "Domain to use with trailing dot. (e.g. \"api.bbci.co.uk.\", \"api.bbc.co.uk.\", \"api.bbc.com.\", \"tools.bbc.co.uk.\" or \"files.bbci.co.uk.\")",
+            "Type": "String"
+        }
+    },
+    "Resources": {
+        "RecordSetGroup": {
+            "Type": "AWS::Route53::RecordSetGroup",
+            "Properties": {
+                "HostedZoneName": {
+                    "Ref": "HostedZoneName"
+                },
+                "RecordSets": [{
+                    "Type": "CNAME",
+                    "Name": {
+                        "Fn::Join": [
+                            "", [{
+                                "Ref": "ComponentName"
+                            }, {
+                                "Ref": "Environment"
+                            }, {
+                                "Ref": "HostedZoneName"
+                            }]
+                        ]
+                    },
+                    "ResourceRecords": [{
+                        "Ref": "Backend"
+                    }],
+                    "TTL": 600
+                }]
+            }
+        }
+    }
+}
