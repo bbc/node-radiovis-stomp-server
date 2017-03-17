@@ -22,11 +22,19 @@ The BBC deploys a lot of its services using RPMs on the CentOS operating system.
 We use the [speculate] tool to generate the RPM spec
 files and service descriptions in order to install and deploy this RadioVis server.
 
-These are the following steps to build an RPM:
+These are the steps to generate an RPM:
 
     npm install
     npm test
     npm run spec
+
+Then if you are running on a BBC machine:
+
+    cosmos-build --os=centos7 --repository=radiovis
+  
+Or if you arn't working within the BBC's development environment, you can use:
+
+    rpmbuild -ba --define "_topdir $PWD" SPECS/radiovis-stomp-server.spec
 
 
 ## Running Tests
