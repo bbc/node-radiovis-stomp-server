@@ -163,6 +163,29 @@
                     "SubnetId": {
                         "Ref": "PublicSubnet"
                     }
+                }],
+                "Tags": [{
+                    "Key": "BBCComponent",
+                    "Value": "radiovis-stomp-server"
+                }, {
+                    "Key": "BBCProject",
+                    "Value": "radiodns"
+                }, {
+                    "Key": "BBCEnvironment",
+                    "Value": {
+                        "Ref": "Environment"
+                    }
+                }, {
+                    "Key": "Name",
+                    "Value": {
+                        "Fn::Join": [
+                            "-", [{
+                                    "Ref": "Environment"
+                                },
+                                "radiovis-stomp-server"
+                            ]
+                        ]
+                    }
                 }]
             }
         },
