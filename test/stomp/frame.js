@@ -82,3 +82,11 @@ describe('MESSAGE frame', function () {
     )
   })
 })
+
+describe('Invalid frame', function () {
+  it('parsing the frame should return undefined', function () {
+    var buffer = new Buffer('Foo Bar\x00')
+    var frame = StompFrame.parse(buffer)
+    assert.equal(frame, undefined)
+  })
+})
