@@ -2,7 +2,7 @@
 
 'use strict'
 
-var StompServer = require('../lib/stomp/server')
+var RadioVisServer = require('../lib/radiovis-server')
 var settings = require('../settings.js')
 var fs = require('fs')
 
@@ -10,6 +10,6 @@ fs.readFile(settings.servicesFile, 'utf8', function (err, data) {
   if (err) throw err
 
   var services = JSON.parse(data)
-  var server = new StompServer(settings, services)
+  var server = new RadioVisServer(settings, services)
   server.start()
 })
