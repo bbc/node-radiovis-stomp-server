@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/bbc/node-radiovis-stomp-server#readme",
   "dependencies": {
+    "express": "^4.15.2",
     "uuid": "~3.0.1"
   },
   "devDependencies": {
