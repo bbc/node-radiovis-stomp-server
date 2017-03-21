@@ -20,6 +20,14 @@ describe('CONNECT frame', function () {
     assert.equal(frame.body, '')
   })
 
+  it('should be tolerant of whitespace before the frame command', function () {
+    var buffer = new Buffer('  CONNECT\x0D\x0A\x0D\x0A\x00')
+    var frame = StompFrame.parse(buffer)
+    assert.equal(frame.command, 'CONNECT')
+    assert.deepEqual(frame.headers, {})
+    assert.equal(frame.body, '')
+  })
+
   it('should generate a frame correctly', function () {
     var frame = new StompFrame('CONNECT')
     assert.equal(frame.toBuffer(), 'CONNECT\x0A\x0A\x00')
