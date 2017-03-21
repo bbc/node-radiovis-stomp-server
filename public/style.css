@@ -1,0 +1,22 @@
+body { background-color: #F0F0F0; }
+
+h1, p, ul, li
+{
+	text-align: left;
+	color: #000;
+	font-family: arial, helvetica, verdana, sans-serif;
+	margin: 20pt;
+	text-decoration: none;
+}
+
+a:link, a:visited { color: #003399; }
+a:hover, a:active { color: #990000; }
+
+ul, li
+{
+	margin-top: 5pt;
+	margin-bottom: 5pt;
+}
+
+h1 { font-size: 28pt; }
+p, ul, li { font-size: 12pt; }
