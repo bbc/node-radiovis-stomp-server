@@ -43,6 +43,14 @@ describe('SUBSCRIBE frame', function () {
     assert.equal(frame.body, '')
   })
 
+  it('should parse a header with a space after the colon', function () {
+    var buffer = new Buffer('SUBSCRIBE\x0Adestination: /topic/fm/ce1/c201/09880/text\x0Aack : auto\x0A\x0A\x00')
+    var frame = StompFrame.parse(buffer)
+    assert.equal(frame.command, 'SUBSCRIBE')
+    assert.deepEqual(frame.headers, {'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto'})
+    assert.equal(frame.body, '')
+  })
+
   it('should generate a frame correctly', function () {
     var frame = new StompFrame('SUBSCRIBE', {'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto'})
     assert.equal(frame.toBuffer(), 'SUBSCRIBE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0Aack:auto\x0A\x0A\x00')
