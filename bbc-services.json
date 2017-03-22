@@ -167,7 +167,6 @@
     ]
   },
   "bbc_radio_five_live_sports_extra": {
-    "id": "bbc_radio_five_live_sports_extra",
     "name": "BBC R5 live sports extra",
     "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_five_live_sports_extra.png",
     "default_link_url": "http://www.bbc.co.uk/5livesportsextra",
