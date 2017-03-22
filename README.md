@@ -46,6 +46,19 @@ To generate a test coverage report:
     npm run coverage
 
 
+## License
+
+Copyright 2017 British Broadcasting Corporation
+
+The RadioVis STOMP Server is free software; you can redistribute it and/or
+modify it under the terms of the Apache License, Version 2.0.
+
+The RadioVis STOMP Server is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the Apache License, Version 2.0 for
+more details.
+
+
 
 [node.js]:         https://nodejs.org/
 [STOMP protocol]:  https://stomp.github.io/stomp-specification-1.0.html
