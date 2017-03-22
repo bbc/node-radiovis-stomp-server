@@ -16,9 +16,12 @@
 <div class="container">
   <h1>RadioVis Stomp Server Admin</h1>
 
-  <p>
-    Connected clients: <%= clientCount %>
-  </p>
+  <dl>
+    <dt>Connected clients:</dt> <dd><%= clientCount %></dd>
+    <dt>RadioVis Uptime:</dt> <dd><%= radioVisUptime %></dd>
+    <dt>OS Uptime:</dt> <dd><%= osUptime %></dd>
+    <dt>Load Average:</dt> <dd><%= loadAvg %></dd>
+  </dl>
 </div>
 
 </body>

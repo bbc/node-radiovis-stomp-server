@@ -1,6 +1,6 @@
 body
 {
-	font-size: 1.5em;
+	font-size: 1.0em;
 	line-height: 1.6;
 	font-weight: 400;
 	font-family: Helvetica, Arial, sans-serif;
@@ -20,12 +20,12 @@ body
 
 p
 {
-  text-align: left;
-  color: #000;
-  font-size: 12pt;
-  text-decoration: none;
-  margin-top: 10pt;
-  margin-bottom: 10pt;
+	text-align: left;
+	color: #000;
+	font-size: 12pt;
+	text-decoration: none;
+	margin-top: 10pt;
+	margin-bottom: 10pt;
 }
 
 /* Links */
@@ -59,7 +59,26 @@ ol ol,
 ol ul
 {
 	margin: 1.5rem 0 1.5rem 3rem;
-	font-size: 12pt;
+	font-size: 10pt;
 }
 
 li { margin-bottom: 1rem; }
+
+/* Definition List */
+dt, dd {
+  font-size: 10pt
+}
+
+dl dt {
+  float: left;
+  width: 160px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+dl dd {
+  margin-left: 170px;
+}
