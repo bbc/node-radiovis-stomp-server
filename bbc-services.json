@@ -207,7 +207,7 @@
       "dab:ce1.ce15.c22c.0"
     ]
   },
-  "bbc_world_service": {
+  "bbc_world_service_uk": {
     "name": "BBC World Service",
     "default_image_url": "http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_world_service.png",
     "default_link_url": "http://www.bbc.co.uk/worldserviceradio",
