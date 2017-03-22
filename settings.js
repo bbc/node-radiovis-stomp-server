@@ -8,7 +8,7 @@ module.exports = {
     // stompHost: '127.0.0.1',
 
     // the HTTP port to listen for HTTP admin connections on
-  adminPort: 3000,
+  adminPort: 7443,
 
     // By default only listen for HTTP admin connections on localhost
   adminHost: '127.0.0.1',
