@@ -6,7 +6,7 @@
   "bin": "./bin/radiovis-stomp-server",
   "scripts": {
     "start": "node ./bin/radiovis-stomp-server",
-    "test": "standard && mocha",
+    "test": "mocha && standard",
     "coverage": "istanbul cover _mocha",
     "spec": "speculate"
   },
