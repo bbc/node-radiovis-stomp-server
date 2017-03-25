@@ -28,10 +28,14 @@ p
 	margin-bottom: 10pt;
 }
 
+
+
 /* Links */
 a { color: #1EAEDB; }
 a:link, a:visited { color: #003399; }
 a:hover, a:active { color: #990000; }
+
+
 
 /* Headers */
 h1 { font-size: 28pt; }
@@ -42,6 +46,8 @@ h1, h2, h3, h4, h5, h6
 	margin-bottom: 2rem;
 	font-weight: 300;
 }
+
+
 
 /* Lists */
 ul { list-style: circle inside; }
@@ -64,21 +70,46 @@ ol ul
 
 li { margin-bottom: 1rem; }
 
+
+
 /* Definition List */
-dt, dd {
-  font-size: 10pt
+dt, dd { font-size: 10pt; }
+
+dl dt
+{
+	float: left;
+	width: 160px;
+	overflow: hidden;
+	clear: left;
+	text-align: right;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: bold;
 }
 
-dl dt {
-  float: left;
-  width: 160px;
-  overflow: hidden;
-  clear: left;
-  text-align: right;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-weight: bold;
+dl dd { margin-left: 170px; }
+
+
+
+/* Tables */
+table
+{
+	border-spacing: 0;
+	border-collapse: collapse;
 }
-dl dd {
-  margin-left: 170px;
+
+td, th
+{
+	font-size: 11pt;
+	border: 1px solid #ddd;
+	padding: 5px;
+	margin: 0px;
+	text-align: left;
+}
+
+th
+{
+	vertical-align: bottom;
+	border-bottom: 2px solid #ddd;
+	font-weight: bold;
 }
