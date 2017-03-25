@@ -3,7 +3,7 @@
 var assert = require('assert')
 var RadioVisService = require('../lib/radiovis-service')
 
-describe('RadioVisSerivice', function () {
+describe('RadioVisService', function () {
   describe('initialising', function () {
     it('should set properties correctly, when there is only a bearer', function () {
       var serviceData = {
