@@ -34,7 +34,7 @@
     "standard": "*",
     "mocha": "^3.2.0",
     "istanbul": "^0.4.5",
-    "speculate": "*"
+    "speculate": ">=1.7.0"
   },
   "standard": {
     "env": [ "mocha" ]
@@ -42,6 +42,9 @@
   "spec": {
     "buildRequires": [
       "npm"
-    ]
+    ],
+    "serviceOptions": {
+      "LimitNOFILE": 65535
+    }
   }
 }
