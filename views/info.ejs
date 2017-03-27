@@ -17,13 +17,13 @@
       <th>Bearers</th>
       <th>Connected Clients</th>
     </tr>
-    <% for(var serviceId in services) { %>
+    <% orderedServices.forEach(function(serviceId) { %>
       <tr>
         <td><%= services[serviceId].name %></td>
         <td><%= services[serviceId].bearers.length %></td>
-        <td>?</td>
+        <td><%= services[serviceId].connectionCount %></td>
       </tr>
-    <% } %>
+    <% }) %>
   
   </table>
 </div>
