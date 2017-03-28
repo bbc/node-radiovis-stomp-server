@@ -17,7 +17,7 @@ describe('RadioVisServer', function () {
       var server = new RadioVisServer({}, serviceData)
       assert.equal(server.stompPort, 61613)
       assert.equal(server.stompHost, '0.0.0.0')
-      assert.equal(server.adminPort, 7443)
+      assert.equal(server.adminPort, 3000)
       assert.equal(server.adminHost, '127.0.0.1')
       assert.equal(typeof server.services, 'object')
       assert(server.services['london'] instanceof RadioVisService)
