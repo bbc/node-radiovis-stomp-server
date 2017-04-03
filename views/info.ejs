@@ -19,7 +19,7 @@
     </tr>
     <% orderedServices.forEach(function(serviceId) { %>
       <tr>
-        <td><%= services[serviceId].name %></td>
+        <td><a href="/services/<%= serviceId %>"><%= services[serviceId].name %></a></td>
         <td><%= services[serviceId].bearers.length %></td>
         <td><%= services[serviceId].connectionCount %></td>
       </tr>

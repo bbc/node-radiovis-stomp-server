@@ -42,9 +42,9 @@ h1 { font-size: 28pt; }
 
 h1, h2, h3, h4, h5, h6
 {
-	margin-top: 0;
-	margin-bottom: 2rem;
-	font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
 }
 
 
@@ -64,11 +64,9 @@ ul ol,
 ol ol,
 ol ul
 {
-	margin: 1.5rem 0 1.5rem 3rem;
-	font-size: 10pt;
+  margin: 0.5rem 0 0.5rem 3rem;
+  font-size: 10pt;
 }
-
-li { margin-bottom: 1rem; }
 
 
 
