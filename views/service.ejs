@@ -5,8 +5,10 @@
 
   <dl>
     <dt>Current Text:</dt> <dd><%= service.text %></dd>
-    <dt>Current Link:</dt> <dd><a href="<%= service.link %>"><%= service.link %></a></dd>
     <dt>Current Image:</dt> <dd><a href="<%= service.image %>"><%= service.image %></a></dd>
+    <dt>Current Link:</dt> <dd><a href="<%= service.link %>"><%= service.link %></a></dd>
+    <dt>Last Text Update:</dt> <dd><%= service.updatedAt.text %></dd>
+    <dt>Last Image Update:</dt> <dd><%= service.updatedAt.image %></a></dd>
   </dl>
 
   <h2>Bearers</h2>
