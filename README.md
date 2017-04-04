@@ -39,6 +39,23 @@ Or if you arn't working within the BBC's development environment, you can use:
     rpmbuild -ba --define "_topdir $PWD" SPECS/radiovis-stomp-server.spec
 
 
+## Publishing images and text
+
+Content is pushed to clients via a HTTP POST. The content can be sent using either 
+URL encoding, or as JSON. Text and Image can be sent using separate requests or in 
+the same request. A link may optionally be specified at the same time as an image.
+
+For example to update the *text* for a station using curl:
+
+    curl -v http://localhost:3000/services/bbc_radio_one -d 'text=Hello World'
+
+Or to update the *image* and *link*:
+
+    curl http://localhost:3000/services/bbc_radio_two \
+      -d 'image=http://www.bbc.co.uk/staticarchive/497463ddfe1950573912db49d8c10a7683e5b2ca.jpg' \
+      -d 'link=http://www.bbc.co.uk/programmes/b006wr3p'
+
+
 ## Running Tests
 
     npm test
