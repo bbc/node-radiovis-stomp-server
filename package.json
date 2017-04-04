@@ -1,6 +1,6 @@
 {
   "name": "radiovis-stomp-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "STOMP server implementation for RadioVis",
   "main": "index.js",
   "bin": "./bin/radiovis-stomp-server",
@@ -32,13 +32,16 @@
     "uuid": "~3.0.1"
   },
   "devDependencies": {
-    "standard": "*",
-    "mocha": "^3.2.0",
     "istanbul": "^0.4.5",
-    "speculate": ">=1.7.0"
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0",
+    "speculate": ">=1.7.0",
+    "standard": "*"
   },
   "standard": {
-    "env": [ "mocha" ]
+    "env": [
+      "mocha"
+    ]
   },
   "spec": {
     "buildRequires": [
