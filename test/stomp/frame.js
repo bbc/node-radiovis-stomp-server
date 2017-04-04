@@ -4,7 +4,6 @@ var assert = require('assert')
 var StompFrame = require('../../lib/stomp/frame')
 
 describe('StompFrame', function () {
-
   describe('CONNECT frame', function () {
     it('should parse the frame correctly', function () {
       var buffer = new Buffer('CONNECT\x0A\x0A\x00')
@@ -108,5 +107,4 @@ describe('StompFrame', function () {
       assert.equal(frame, undefined)
     })
   })
-
 })
