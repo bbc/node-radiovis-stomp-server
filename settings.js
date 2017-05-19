@@ -14,7 +14,7 @@ module.exports = {
   adminHost: '127.0.0.1',
 
     // The file containing a list of Radio services
-  servicesFile: 'bbc-services.json',
+  servicesFile: 'services.json',
 
     // How often to re-publish messages to subscribers (in seconds)
     // This can be useful to remove that clients have silently disappeared

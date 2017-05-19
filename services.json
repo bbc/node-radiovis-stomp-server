@@ -1,0 +1,20 @@
+{
+  "station1": {
+    "name": "Big Station 1",
+    "default_image": "http://cdn.example.com/images/static/station1.png",
+    "default_link": "http://www.example.com/station1",
+    "bearers": [
+      "dab:ce2.ce21.c201.0",
+      "fm:ce2.c201.09710"
+    ]
+  },
+  "station2": {
+    "name": "Big Station 2",
+    "default_image": "http://cdn.example.com/images/static/station2.png",
+    "default_link": "http://www.example.com/station2",
+    "bearers": [
+      "dab:ce2.ce21.c202.0",
+      "fm:ce2.c202.08810"
+    ]
+  },
+}

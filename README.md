@@ -47,13 +47,13 @@ the same request. A link may optionally be specified at the same time as an imag
 
 For example to update the *text* for a station using curl:
 
-    curl -v http://localhost:3000/services/bbc_radio_one -d 'text=Hello World'
+    curl -v http://localhost:3000/services/station1 -d 'text=Hello World'
 
 Or to update the *image* and *link*:
 
-    curl http://localhost:3000/services/bbc_radio_two \
-      -d 'image=http://www.bbc.co.uk/staticarchive/497463ddfe1950573912db49d8c10a7683e5b2ca.jpg' \
-      -d 'link=http://www.bbc.co.uk/programmes/b006wr3p'
+    curl http://localhost:3000/services/station2 \
+      -d 'image=http://www.example.com/images/myimage.jpg' \
+      -d 'link=http://www.example.com/programmes/breakfast'
 
 
 ## Running Tests
