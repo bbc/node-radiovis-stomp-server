@@ -18,27 +18,6 @@ User Application Specification_.
 This will start a STOMP server running on port 61613.
 
 
-## Deploying
-
-The BBC deploys a lot of its services using RPMs on the CentOS operating system.
-We use the [speculate] tool to generate the RPM spec
-files and service descriptions in order to install and deploy this RadioVis server.
-
-These are the steps to generate an RPM:
-
-    npm install
-    npm test
-    npm run spec
-
-Then if you are running on a BBC machine:
-
-    cosmos-build --os=centos7 --repository=radiovis
-  
-Or if you arn't working within the BBC's development environment, you can use:
-
-    rpmbuild -ba --define "_topdir $PWD" SPECS/radiovis-stomp-server.spec
-
-
 ## Publishing images and text
 
 Content is pushed to clients via a HTTP POST. The content can be sent using either 
