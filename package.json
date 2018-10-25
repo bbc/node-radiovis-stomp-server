@@ -2,7 +2,7 @@
   "name": "radiovis-stomp-server",
   "version": "0.1.1",
   "description": "STOMP server implementation for RadioVis",
-  "main": "index.js",
+  "main": "./lib/radiovis-server.js",
   "bin": "./bin/radiovis-stomp-server",
   "scripts": {
     "start": "node ./bin/radiovis-stomp-server",
