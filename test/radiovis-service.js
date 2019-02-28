@@ -81,9 +81,9 @@ describe('RadioVisService', function () {
   describe('initServices', function () {
     it('should load a list of services', function () {
       var serviceData = {
-        'radio1': {'name': 'BBC Radio 1', 'bearers': ['dab:ce1.ce15.c221.0']},
-        'radio2': {'name': 'BBC Radio 2', 'bearers': ['dab:ce1.ce15.c222.0']},
-        'radio3': {'name': 'BBC Radio 3', 'bearers': ['dab:ce1.ce15.c223.0']}
+        'radio1': { 'name': 'BBC Radio 1', 'bearers': ['dab:ce1.ce15.c221.0'] },
+        'radio2': { 'name': 'BBC Radio 2', 'bearers': ['dab:ce1.ce15.c222.0'] },
+        'radio3': { 'name': 'BBC Radio 3', 'bearers': ['dab:ce1.ce15.c223.0'] }
       }
 
       var services = RadioVisService.initServices(serviceData)
