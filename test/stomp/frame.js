@@ -6,7 +6,7 @@ var StompFrame = require('../../lib/stomp/frame')
 describe('StompFrame', function () {
   describe('CONNECT frame', function () {
     it('should parse the frame correctly', function () {
-      var buffer = new Buffer('CONNECT\x0A\x0A\x00')
+      var buffer = Buffer.from('CONNECT\x0A\x0A\x00')
       var frame = StompFrame.parse(buffer)
       assert.equal(frame.command, 'CONNECT')
       assert.deepEqual(frame.headers, {})
@@ -14,7 +14,7 @@ describe('StompFrame', function () {
     })
 
     it('should parse the frame with CR LF correctly', function () {
-      var buffer = new Buffer('CONNECT\x0D\x0A\x0D\x0A\x00')
+      var buffer = Buffer.from('CONNECT\x0D\x0A\x0D\x0A\x00')
       var frame = StompFrame.parse(buffer)
       assert.equal(frame.command, 'CONNECT')
       assert.deepEqual(frame.headers, {})
@@ -22,7 +22,7 @@ describe('StompFrame', function () {
     })
 
     it('should be tolerant of whitespace before the frame command', function () {
-      var buffer = new Buffer('  CONNECT\x0D\x0A\x0D\x0A\x00')
+      var buffer = Buffer.from('  CONNECT\x0D\x0A\x0D\x0A\x00')
       var frame = StompFrame.parse(buffer)
       assert.equal(frame.command, 'CONNECT')
       assert.deepEqual(frame.headers, {})
@@ -37,7 +37,7 @@ describe('StompFrame', function () {
 
   describe('SUBSCRIBE frame', function () {
     it('should parse the frame correctly', function () {
-      var buffer = new Buffer('SUBSCRIBE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0Aack:auto\x0A\x0A\x00')
+      var buffer = Buffer.from('SUBSCRIBE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0Aack:auto\x0A\x0A\x00')
       var frame = StompFrame.parse(buffer)
       assert.equal(frame.command, 'SUBSCRIBE')
       assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
@@ -45,7 +45,7 @@ describe('StompFrame', function () {
     })
 
     it('should parse the frame with CR LF correctly', function () {
-      var buffer = new Buffer('SUBSCRIBE\x0D\x0Adestination:/topic/fm/ce1/c201/09880/text\x0D\x0Aack:auto\x0D\x0A\x0D\x0A\x00')
+      var buffer = Buffer.from('SUBSCRIBE\x0D\x0Adestination:/topic/fm/ce1/c201/09880/text\x0D\x0Aack:auto\x0D\x0A\x0D\x0A\x00')
       var frame = StompFrame.parse(buffer)
       assert.equal(frame.command, 'SUBSCRIBE')
       assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
@@ -53,7 +53,7 @@ describe('StompFrame', function () {
     })
 
     it('should parse a header with a space after the colon', function () {
-      var buffer = new Buffer('SUBSCRIBE\x0Adestination: /topic/fm/ce1/c201/09880/text\x0Aack : auto\x0A\x0A\x00')
+      var buffer = Buffer.from('SUBSCRIBE\x0Adestination: /topic/fm/ce1/c201/09880/text\x0Aack : auto\x0A\x0A\x00')
       var frame = StompFrame.parse(buffer)
       assert.equal(frame.command, 'SUBSCRIBE')
       assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
@@ -68,7 +68,7 @@ describe('StompFrame', function () {
 
   describe('MESSAGE frame', function () {
     it('should parse the frame correctly', function () {
-      var buffer = new Buffer('MESSAGE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0A\x0AHello World\x00')
+      var buffer = Buffer.from('MESSAGE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0A\x0AHello World\x00')
       var frame = StompFrame.parse(buffer)
       assert.equal(frame.command, 'MESSAGE')
       assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text' })
@@ -76,7 +76,7 @@ describe('StompFrame', function () {
     })
 
     it('should parse the frame with CR LF correctly', function () {
-      var buffer = new Buffer('MESSAGE\x0D\x0Adestination:/topic/fm/ce1/c201/09880/text\x0D\x0A\x0D\x0AHello World\x00')
+      var buffer = Buffer.from('MESSAGE\x0D\x0Adestination:/topic/fm/ce1/c201/09880/text\x0D\x0A\x0D\x0AHello World\x00')
       var frame = StompFrame.parse(buffer)
       assert.equal(frame.command, 'MESSAGE')
       assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text' })
@@ -102,7 +102,7 @@ describe('StompFrame', function () {
 
   describe('Invalid frame', function () {
     it('parsing the frame should return undefined', function () {
-      var buffer = new Buffer('Foo Bar\x00')
+      var buffer = Buffer.from('Foo Bar\x00')
       var frame = StompFrame.parse(buffer)
       assert.equal(frame, undefined)
     })

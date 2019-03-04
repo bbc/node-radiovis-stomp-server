@@ -31,14 +31,14 @@ describe('StompConnection', function () {
 
     it('should not call handleFrame an incomplete frame', function () {
       connection.handleData(
-        new Buffer('CONNECT')
+        Buffer.from('CONNECT')
       )
       assert(stubFrame.notCalled)
     })
 
     it('should call handleFrame once for a single complete frame', function () {
       connection.handleData(
-        new Buffer('CONNECT\n\n\0')
+        Buffer.from('CONNECT\n\n\0')
       )
       assert.equal(stubFrame.callCount, 1)
       assert.equal(stubError.callCount, 0)
@@ -49,7 +49,7 @@ describe('StompConnection', function () {
 
     it('should call handleFrame twice for two frames in a single buffer', function () {
       connection.handleData(
-        new Buffer('CONNECT\n\n\0SUBSCRIBE\ndestination:foo\n\n\0')
+        Buffer.from('CONNECT\n\n\0SUBSCRIBE\ndestination:foo\n\n\0')
       )
       assert.equal(stubFrame.callCount, 2)
       assert.equal(stubError.callCount, 0)
@@ -59,10 +59,10 @@ describe('StompConnection', function () {
 
     it('should call handleFrame once for a frame split over two buffers', function () {
       connection.handleData(
-        new Buffer('SUBSCRIBE\n')
+        Buffer.from('SUBSCRIBE\n')
       )
       connection.handleData(
-        new Buffer('destination:foo\n\n\0')
+        Buffer.from('destination:foo\n\n\0')
       )
 
       assert.equal(stubFrame.callCount, 1)
@@ -73,10 +73,10 @@ describe('StompConnection', function () {
 
     it('should call handleFrame two for 2 frame split over two buffers', function () {
       connection.handleData(
-        new Buffer('CONNECT\n\n\0SUBSCRIBE\n')
+        Buffer.from('CONNECT\n\n\0SUBSCRIBE\n')
       )
       connection.handleData(
-        new Buffer('destination:foo\n\n\0')
+        Buffer.from('destination:foo\n\n\0')
       )
 
       assert.equal(stubFrame.callCount, 2)
@@ -87,7 +87,7 @@ describe('StompConnection', function () {
 
     it('should send an error if too much data is recieved', function () {
       connection.handleData(
-        new Buffer(1024 * 1024)
+        Buffer.alloc(1024 * 1024)
       )
 
       assert.equal(stubFrame.callCount, 0)
@@ -96,7 +96,7 @@ describe('StompConnection', function () {
 
     it('should send an error if a bad frame is recieved', function () {
       connection.handleData(
-        new Buffer('foobar\0')
+        Buffer.from('foobar\0')
       )
 
       assert.equal(stubFrame.callCount, 0)
