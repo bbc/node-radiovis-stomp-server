@@ -40,21 +40,21 @@ describe('StompConnection', function () {
       connection.handleData(
         Buffer.from('CONNECT\n\n\0')
       )
-      assert.equal(stubFrame.callCount, 1)
-      assert.equal(stubError.callCount, 0)
+      assert.strictEqual(stubFrame.callCount, 1)
+      assert.strictEqual(stubError.callCount, 0)
 
       var connectFrame = new StompFrame('CONNECT')
-      assert.deepEqual(stubFrame.args[0][0], connectFrame)
+      assert.deepStrictEqual(stubFrame.args[0][0], connectFrame)
     })
 
     it('should call handleFrame twice for two frames in a single buffer', function () {
       connection.handleData(
         Buffer.from('CONNECT\n\n\0SUBSCRIBE\ndestination:foo\n\n\0')
       )
-      assert.equal(stubFrame.callCount, 2)
-      assert.equal(stubError.callCount, 0)
-      assert.equal(stubFrame.args[0][0].command, 'CONNECT')
-      assert.equal(stubFrame.args[1][0].command, 'SUBSCRIBE')
+      assert.strictEqual(stubFrame.callCount, 2)
+      assert.strictEqual(stubError.callCount, 0)
+      assert.strictEqual(stubFrame.args[0][0].command, 'CONNECT')
+      assert.strictEqual(stubFrame.args[1][0].command, 'SUBSCRIBE')
     })
 
     it('should call handleFrame once for a frame split over two buffers', function () {
@@ -65,10 +65,10 @@ describe('StompConnection', function () {
         Buffer.from('destination:foo\n\n\0')
       )
 
-      assert.equal(stubFrame.callCount, 1)
-      assert.equal(stubError.callCount, 0)
-      assert.equal(stubFrame.args[0][0].command, 'SUBSCRIBE')
-      assert.equal(stubFrame.args[0][0].headers.destination, 'foo')
+      assert.strictEqual(stubFrame.callCount, 1)
+      assert.strictEqual(stubError.callCount, 0)
+      assert.strictEqual(stubFrame.args[0][0].command, 'SUBSCRIBE')
+      assert.strictEqual(stubFrame.args[0][0].headers.destination, 'foo')
     })
 
     it('should call handleFrame two for 2 frame split over two buffers', function () {
@@ -79,10 +79,10 @@ describe('StompConnection', function () {
         Buffer.from('destination:foo\n\n\0')
       )
 
-      assert.equal(stubFrame.callCount, 2)
-      assert.equal(stubError.callCount, 0)
-      assert.equal(stubFrame.args[0][0].command, 'CONNECT')
-      assert.equal(stubFrame.args[1][0].command, 'SUBSCRIBE')
+      assert.strictEqual(stubFrame.callCount, 2)
+      assert.strictEqual(stubError.callCount, 0)
+      assert.strictEqual(stubFrame.args[0][0].command, 'CONNECT')
+      assert.strictEqual(stubFrame.args[1][0].command, 'SUBSCRIBE')
     })
 
     it('should send an error if too much data is recieved', function () {
@@ -90,8 +90,8 @@ describe('StompConnection', function () {
         Buffer.alloc(1024 * 1024)
       )
 
-      assert.equal(stubFrame.callCount, 0)
-      assert.equal(stubError.args[0][0], 'Client sent too much data')
+      assert.strictEqual(stubFrame.callCount, 0)
+      assert.strictEqual(stubError.args[0][0], 'Client sent too much data')
     })
 
     it('should send an error if a bad frame is recieved', function () {
@@ -99,8 +99,8 @@ describe('StompConnection', function () {
         Buffer.from('foobar\0')
       )
 
-      assert.equal(stubFrame.callCount, 0)
-      assert.equal(stubError.args[0][0], 'Unable to parse STOMP frame')
+      assert.strictEqual(stubFrame.callCount, 0)
+      assert.strictEqual(stubError.args[0][0], 'Unable to parse STOMP frame')
     })
   })
 })

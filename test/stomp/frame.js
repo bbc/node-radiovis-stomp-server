@@ -8,30 +8,30 @@ describe('StompFrame', function () {
     it('should parse the frame correctly', function () {
       var buffer = Buffer.from('CONNECT\x0A\x0A\x00')
       var frame = StompFrame.parse(buffer)
-      assert.equal(frame.command, 'CONNECT')
-      assert.deepEqual(frame.headers, {})
-      assert.equal(frame.body, '')
+      assert.strictEqual(frame.command, 'CONNECT')
+      assert.deepStrictEqual(frame.headers, {})
+      assert.strictEqual(frame.body, '')
     })
 
     it('should parse the frame with CR LF correctly', function () {
       var buffer = Buffer.from('CONNECT\x0D\x0A\x0D\x0A\x00')
       var frame = StompFrame.parse(buffer)
-      assert.equal(frame.command, 'CONNECT')
-      assert.deepEqual(frame.headers, {})
-      assert.equal(frame.body, '')
+      assert.strictEqual(frame.command, 'CONNECT')
+      assert.deepStrictEqual(frame.headers, {})
+      assert.strictEqual(frame.body, '')
     })
 
     it('should be tolerant of whitespace before the frame command', function () {
       var buffer = Buffer.from('  CONNECT\x0D\x0A\x0D\x0A\x00')
       var frame = StompFrame.parse(buffer)
-      assert.equal(frame.command, 'CONNECT')
-      assert.deepEqual(frame.headers, {})
-      assert.equal(frame.body, '')
+      assert.strictEqual(frame.command, 'CONNECT')
+      assert.deepStrictEqual(frame.headers, {})
+      assert.strictEqual(frame.body, '')
     })
 
     it('should generate a frame correctly', function () {
       var frame = new StompFrame('CONNECT')
-      assert.equal(frame.toBuffer(), 'CONNECT\x0A\x0A\x00')
+      assert.strictEqual(frame.toBuffer().toString(), 'CONNECT\x0A\x0A\x00')
     })
   })
 
@@ -39,30 +39,30 @@ describe('StompFrame', function () {
     it('should parse the frame correctly', function () {
       var buffer = Buffer.from('SUBSCRIBE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0Aack:auto\x0A\x0A\x00')
       var frame = StompFrame.parse(buffer)
-      assert.equal(frame.command, 'SUBSCRIBE')
-      assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
-      assert.equal(frame.body, '')
+      assert.strictEqual(frame.command, 'SUBSCRIBE')
+      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
+      assert.strictEqual(frame.body, '')
     })
 
     it('should parse the frame with CR LF correctly', function () {
       var buffer = Buffer.from('SUBSCRIBE\x0D\x0Adestination:/topic/fm/ce1/c201/09880/text\x0D\x0Aack:auto\x0D\x0A\x0D\x0A\x00')
       var frame = StompFrame.parse(buffer)
-      assert.equal(frame.command, 'SUBSCRIBE')
-      assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
-      assert.equal(frame.body, '')
+      assert.strictEqual(frame.command, 'SUBSCRIBE')
+      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
+      assert.strictEqual(frame.body, '')
     })
 
     it('should parse a header with a space after the colon', function () {
       var buffer = Buffer.from('SUBSCRIBE\x0Adestination: /topic/fm/ce1/c201/09880/text\x0Aack : auto\x0A\x0A\x00')
       var frame = StompFrame.parse(buffer)
-      assert.equal(frame.command, 'SUBSCRIBE')
-      assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
-      assert.equal(frame.body, '')
+      assert.strictEqual(frame.command, 'SUBSCRIBE')
+      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
+      assert.strictEqual(frame.body, '')
     })
 
     it('should generate a frame correctly', function () {
       var frame = new StompFrame('SUBSCRIBE', { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
-      assert.equal(frame.toBuffer(), 'SUBSCRIBE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0Aack:auto\x0A\x0A\x00')
+      assert.strictEqual(frame.toBuffer().toString(), 'SUBSCRIBE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0Aack:auto\x0A\x0A\x00')
     })
   })
 
@@ -70,17 +70,17 @@ describe('StompFrame', function () {
     it('should parse the frame correctly', function () {
       var buffer = Buffer.from('MESSAGE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0A\x0AHello World\x00')
       var frame = StompFrame.parse(buffer)
-      assert.equal(frame.command, 'MESSAGE')
-      assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text' })
-      assert.equal(frame.body, 'Hello World')
+      assert.strictEqual(frame.command, 'MESSAGE')
+      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text' })
+      assert.strictEqual(frame.body, 'Hello World')
     })
 
     it('should parse the frame with CR LF correctly', function () {
       var buffer = Buffer.from('MESSAGE\x0D\x0Adestination:/topic/fm/ce1/c201/09880/text\x0D\x0A\x0D\x0AHello World\x00')
       var frame = StompFrame.parse(buffer)
-      assert.equal(frame.command, 'MESSAGE')
-      assert.deepEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text' })
-      assert.equal(frame.body, 'Hello World')
+      assert.strictEqual(frame.command, 'MESSAGE')
+      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text' })
+      assert.strictEqual(frame.body, 'Hello World')
     })
 
     it('should generate a frame correctly', function () {
@@ -92,8 +92,8 @@ describe('StompFrame', function () {
         },
         'SHOW http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_one.png'
       )
-      assert.equal(
-        frame.toBuffer(),
+      assert.strictEqual(
+        frame.toBuffer().toString(),
         'MESSAGE\x0Adestination:/topic/fm/ce1/c201/09880/image\x0Alink:http://www.bbc.co.uk/\x0A\x0A' +
         'SHOW http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_one.png\x00'
       )
@@ -104,7 +104,7 @@ describe('StompFrame', function () {
     it('parsing the frame should return undefined', function () {
       var buffer = Buffer.from('Foo Bar\x00')
       var frame = StompFrame.parse(buffer)
-      assert.equal(frame, undefined)
+      assert.strictEqual(frame, undefined)
     })
   })
 })

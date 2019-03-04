@@ -11,11 +11,11 @@ describe('RadioVisService', function () {
       }
 
       var service = new RadioVisService('bbclondon', serviceData)
-      assert.equal(service.name, 'bbclondon')
-      assert.equal(service.image, undefined)
-      assert.equal(service.link, undefined)
-      assert.equal(service.text, 'You are listening to bbclondon')
-      assert.deepEqual(service.bearers, ['dab:ce1.c186.cc31.0'])
+      assert.strictEqual(service.name, 'bbclondon')
+      assert.strictEqual(service.image, undefined)
+      assert.strictEqual(service.link, undefined)
+      assert.strictEqual(service.text, 'You are listening to bbclondon')
+      assert.deepStrictEqual(service.bearers, ['dab:ce1.c186.cc31.0'])
     })
 
     it('should set properties correctly, when there is no default text', function () {
@@ -30,11 +30,11 @@ describe('RadioVisService', function () {
       }
 
       var service = new RadioVisService('bbclondon', serviceData)
-      assert.equal(service.name, 'BBC Radio London')
-      assert.equal(service.image, 'http://www.bbc.co.uk/bbclondon.png')
-      assert.equal(service.link, 'http://www.bbc.co.uk/bbclondon')
-      assert.equal(service.text, 'You are listening to BBC Radio London')
-      assert.deepEqual(service.bearers, [
+      assert.strictEqual(service.name, 'BBC Radio London')
+      assert.strictEqual(service.image, 'http://www.bbc.co.uk/bbclondon.png')
+      assert.strictEqual(service.link, 'http://www.bbc.co.uk/bbclondon')
+      assert.strictEqual(service.text, 'You are listening to BBC Radio London')
+      assert.deepStrictEqual(service.bearers, [
         'dab:ce1.c186.cc31.0',
         'fm:ce1.cc11.09490'
       ])
@@ -49,11 +49,11 @@ describe('RadioVisService', function () {
       }
 
       var service = new RadioVisService('foo', serviceData)
-      assert.equal(service.name, 'Foo Bar Radio')
-      assert.equal(service.image, 'http://example.com/foo.png')
-      assert.equal(service.link, undefined)
-      assert.equal(service.text, 'Hello World')
-      assert.deepEqual(service.bearers, ['fm:ce1.c586.09580'])
+      assert.strictEqual(service.name, 'Foo Bar Radio')
+      assert.strictEqual(service.image, 'http://example.com/foo.png')
+      assert.strictEqual(service.link, undefined)
+      assert.strictEqual(service.text, 'Hello World')
+      assert.deepStrictEqual(service.bearers, ['fm:ce1.c586.09580'])
     })
   })
 
@@ -67,11 +67,11 @@ describe('RadioVisService', function () {
       }
 
       var service = new RadioVisService('london', serviceData)
-      assert.deepEqual(service.bearers, [
+      assert.deepStrictEqual(service.bearers, [
         'dab:ce1.c186.cc31.0',
         'fm:ce1.cc11.09490'
       ])
-      assert.deepEqual(service.topics(), [
+      assert.deepStrictEqual(service.topics(), [
         'dab/ce1/c186/cc31/0',
         'fm/ce1/cc11/09490'
       ])
@@ -87,8 +87,8 @@ describe('RadioVisService', function () {
       }
 
       var services = RadioVisService.initServices(serviceData)
-      assert.equal(Object.keys(services).length, 3)
-      assert.equal(services['radio1'].name, 'BBC Radio 1')
+      assert.strictEqual(Object.keys(services).length, 3)
+      assert.strictEqual(services['radio1'].name, 'BBC Radio 1')
     })
   })
 })
