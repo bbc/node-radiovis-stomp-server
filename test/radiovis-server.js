@@ -1,20 +1,20 @@
 'use strict'
 
-var assert = require('assert')
-var RadioVisServer = require('../lib/radiovis-server')
-var RadioVisService = require('../lib/radiovis-service')
+const assert = require('assert')
+const RadioVisServer = require('../lib/radiovis-server')
+const RadioVisService = require('../lib/radiovis-service')
 
 describe('RadioVisServer', function () {
   describe('initialising', function () {
     it('should fall back to default settings', function () {
-      var serviceData = {
+      const serviceData = {
         london: {
           name: 'BBC Radio London',
           bearers: ['dab:ce1.c186.cc31.0']
         }
       }
 
-      var server = new RadioVisServer({}, serviceData)
+      const server = new RadioVisServer({}, serviceData)
       assert.strictEqual(server.stompPort, 61613)
       assert.strictEqual(server.stompHost, '0.0.0.0')
       assert.strictEqual(server.adminPort, 3000)

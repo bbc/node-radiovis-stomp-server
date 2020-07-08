@@ -1,13 +1,13 @@
 'use strict'
 
-var assert = require('assert')
-var sinon = require('sinon')
-var net = require('net')
-var StompConnection = require('../../lib/stomp/connection')
-var StompFrame = require('../../lib/stomp/frame')
+const assert = require('assert')
+const sinon = require('sinon')
+const net = require('net')
+const StompConnection = require('../../lib/stomp/connection')
+const StompFrame = require('../../lib/stomp/frame')
 
-var server
-var socket
+let server
+let socket
 beforeEach(function () {
   server = {}
   socket = new net.Socket()
@@ -15,14 +15,14 @@ beforeEach(function () {
 
 describe('StompConnection', function () {
   it('should create a new connection successfully', function () {
-    var connection = new StompConnection(socket, server)
+    const connection = new StompConnection(socket, server)
     assert(connection.connected)
   })
 
   describe('receiving data', function () {
-    var stubFrame
-    var stubError
-    var connection
+    let stubFrame
+    let stubError
+    let connection
     beforeEach(function () {
       connection = new StompConnection(socket, server)
       stubFrame = sinon.stub(connection, 'handleFrame')
@@ -43,7 +43,7 @@ describe('StompConnection', function () {
       assert.strictEqual(stubFrame.callCount, 1)
       assert.strictEqual(stubError.callCount, 0)
 
-      var connectFrame = new StompFrame('CONNECT')
+      const connectFrame = new StompFrame('CONNECT')
       assert.deepStrictEqual(stubFrame.args[0][0], connectFrame)
     })
 

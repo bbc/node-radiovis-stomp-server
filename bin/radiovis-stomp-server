@@ -2,14 +2,14 @@
 
 'use strict'
 
-var RadioVisServer = require('../lib/radiovis-server')
-var settings = require('../settings.js')
-var fs = require('fs')
+const RadioVisServer = require('../lib/radiovis-server')
+const settings = require('../settings.js')
+const fs = require('fs')
 
 fs.readFile(settings.servicesFile, 'utf8', function (err, data) {
   if (err) throw err
 
-  var services = JSON.parse(data)
-  var server = new RadioVisServer(settings, services)
+  const services = JSON.parse(data)
+  const server = new RadioVisServer(settings, services)
   server.start()
 })
