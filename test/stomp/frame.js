@@ -40,7 +40,7 @@ describe('StompFrame', function () {
       var buffer = Buffer.from('SUBSCRIBE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0Aack:auto\x0A\x0A\x00')
       var frame = StompFrame.parse(buffer)
       assert.strictEqual(frame.command, 'SUBSCRIBE')
-      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
+      assert.deepStrictEqual(frame.headers, { destination: '/topic/fm/ce1/c201/09880/text', ack: 'auto' })
       assert.strictEqual(frame.body, '')
     })
 
@@ -48,7 +48,7 @@ describe('StompFrame', function () {
       var buffer = Buffer.from('SUBSCRIBE\x0D\x0Adestination:/topic/fm/ce1/c201/09880/text\x0D\x0Aack:auto\x0D\x0A\x0D\x0A\x00')
       var frame = StompFrame.parse(buffer)
       assert.strictEqual(frame.command, 'SUBSCRIBE')
-      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
+      assert.deepStrictEqual(frame.headers, { destination: '/topic/fm/ce1/c201/09880/text', ack: 'auto' })
       assert.strictEqual(frame.body, '')
     })
 
@@ -56,12 +56,12 @@ describe('StompFrame', function () {
       var buffer = Buffer.from('SUBSCRIBE\x0Adestination: /topic/fm/ce1/c201/09880/text\x0Aack : auto\x0A\x0A\x00')
       var frame = StompFrame.parse(buffer)
       assert.strictEqual(frame.command, 'SUBSCRIBE')
-      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
+      assert.deepStrictEqual(frame.headers, { destination: '/topic/fm/ce1/c201/09880/text', ack: 'auto' })
       assert.strictEqual(frame.body, '')
     })
 
     it('should generate a frame correctly', function () {
-      var frame = new StompFrame('SUBSCRIBE', { 'destination': '/topic/fm/ce1/c201/09880/text', 'ack': 'auto' })
+      var frame = new StompFrame('SUBSCRIBE', { destination: '/topic/fm/ce1/c201/09880/text', ack: 'auto' })
       assert.strictEqual(frame.toBuffer().toString(), 'SUBSCRIBE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0Aack:auto\x0A\x0A\x00')
     })
   })
@@ -71,7 +71,7 @@ describe('StompFrame', function () {
       var buffer = Buffer.from('MESSAGE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0A\x0AHello World\x00')
       var frame = StompFrame.parse(buffer)
       assert.strictEqual(frame.command, 'MESSAGE')
-      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text' })
+      assert.deepStrictEqual(frame.headers, { destination: '/topic/fm/ce1/c201/09880/text' })
       assert.strictEqual(frame.body, 'Hello World')
     })
 
@@ -79,7 +79,7 @@ describe('StompFrame', function () {
       var buffer = Buffer.from('MESSAGE\x0D\x0Adestination:/topic/fm/ce1/c201/09880/text\x0D\x0A\x0D\x0AHello World\x00')
       var frame = StompFrame.parse(buffer)
       assert.strictEqual(frame.command, 'MESSAGE')
-      assert.deepStrictEqual(frame.headers, { 'destination': '/topic/fm/ce1/c201/09880/text' })
+      assert.deepStrictEqual(frame.headers, { destination: '/topic/fm/ce1/c201/09880/text' })
       assert.strictEqual(frame.body, 'Hello World')
     })
 
@@ -87,8 +87,8 @@ describe('StompFrame', function () {
       var frame = new StompFrame(
         'MESSAGE',
         {
-          'destination': '/topic/fm/ce1/c201/09880/image',
-          'link': 'http://www.bbc.co.uk/'
+          destination: '/topic/fm/ce1/c201/09880/image',
+          link: 'http://www.bbc.co.uk/'
         },
         'SHOW http://static.bbci.co.uk/radiovis/1.1.0/logos/bbc_radio_one.png'
       )
