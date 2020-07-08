@@ -32,7 +32,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "moment": "^2.24.0",
-    "uuid": "^3.3.2"
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "mocha": "^8.0.1",
