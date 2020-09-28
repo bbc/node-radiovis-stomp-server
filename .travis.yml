@@ -1,11 +1,3 @@
 language: node_js
 node_js: v10
 sudo: false
-
-deploy:
-  provider: npm
-  email: irfs@bbc.co.uk
-  api_key:
-    secure: vO22dsZgTJNx8LIldkPkFFu8jkuBd3XFYfb4HFfhElcBewIkRd7774vsOzkAlT2SshdP2QFTR6Jg7gjiJs2Z6jJYzREvVz3gi06wvoFjKafB93q6bxsEqMel9JmVMfgq2ZDg7SYVAQW+mz+mmk0pa6Ye/oiBztzhatOumDEZwrk=
-  on:
-    tags: true
