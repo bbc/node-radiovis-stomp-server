@@ -40,6 +40,9 @@
     "sinon": "^9.2.4",
     "standard": "^16.0.3"
   },
+  "mocha": {
+    "recursive": true
+  },
   "standard": {
     "env": [
       "mocha"
