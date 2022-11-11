@@ -20,5 +20,9 @@ module.exports = {
   // This can be useful to remove that clients have silently disappeared
   //
   // If you are sending messages frequently anyway, this will be ignored
-  republishFrequency: 900
+  republishFrequency: 900,
+
+  // to allow wildcard subscriptions (delivery of all messages published on any
+  // topic) set this to true
+  wildcard: true
 }

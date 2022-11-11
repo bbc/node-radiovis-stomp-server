@@ -64,6 +64,14 @@ describe('StompFrame', function () {
       const frame = new StompFrame('SUBSCRIBE', { destination: '/topic/fm/ce1/c201/09880/text', ack: 'auto' })
       assert.strictEqual(frame.toBuffer().toString(), 'SUBSCRIBE\x0Adestination:/topic/fm/ce1/c201/09880/text\x0Aack:auto\x0A\x0A\x00')
     })
+
+    it('should parse a wildcard subscription correctly', function () {
+      const buffer = Buffer.from('SUBSCRIBE\x0Adestination:/topic/*/text\x0Aack:auto\x0A\x0A\x00')
+      const frame = StompFrame.parse(buffer)
+      assert.strictEqual(frame.command, 'SUBSCRIBE')
+      assert.deepStrictEqual(frame.headers, { destination: '/topic/*/text', ack: 'auto' })
+      assert.strictEqual(frame.body, '')
+    })
   })
 
   describe('MESSAGE frame', function () {
