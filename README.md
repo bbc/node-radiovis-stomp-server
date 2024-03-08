@@ -44,6 +44,21 @@ To generate a test coverage report:
     npm run coverage
 
 
+## Settings
+
+The [settings.js](settings.js) file is used to configure the server.
+It supports the following confection options:
+
+| Setting Name         | Default         | Description             |
+| -------------------- | --------------- | ----------------------- | 
+| `stompPort`          | `61613`         | STOMP port to listen for client connections on.    |
+| `stompHost`          | `0.0.0.0`       | IP address to bind STOMP connections to.           |
+| `adminPort`          | `3000`          | HTTP port to listen for HTTP admin connections on. |
+| `adminHost`          | `127.0.0.1`     | IP address to bind HTTP admin interface to.        | 
+| `servicesFile`       | `services.json` | JSON file to load list of broadcast services from. |
+| `republishFrequency` | `900`           | How often to re-publish messages to subscribers.   |
+
+
 ## License
 
 Copyright 2017-2024 British Broadcasting Corporation
