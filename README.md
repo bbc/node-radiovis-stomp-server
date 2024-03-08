@@ -10,7 +10,7 @@ User Application Specification_.
 
 ## Running
 
-The recommended version of Node.js is v10.0.0
+The recommended version of Node.js is v20
 
     npm install
     npm start
