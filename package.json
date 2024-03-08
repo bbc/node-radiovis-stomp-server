@@ -3,7 +3,9 @@
   "version": "0.1.5",
   "description": "STOMP server implementation for RadioVis",
   "main": "./lib/radiovis-server.js",
-  "bin": "./bin/radiovis-stomp-server",
+  "bin": {
+    "radiovis-stomp-server": "bin/radiovis-stomp-server"
+  },
   "scripts": {
     "start": "node ./bin/radiovis-stomp-server",
     "test": "mocha && standard",
