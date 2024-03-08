@@ -20,7 +20,6 @@ beforeEach(function () {
   socket = new net.Socket()
 })
 
-
 describe('StompConnection', function () {
   it('should create a new connection successfully', function () {
     const connection = new StompConnection(socket, server)
