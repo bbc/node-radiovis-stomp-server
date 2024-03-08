@@ -9,7 +9,14 @@ const StompFrame = require('../../lib/stomp/frame')
 let server
 let socket
 beforeEach(function () {
-  server = {}
+  // FIXME: better way of mocking this?
+  server = {
+    topicMap: {},
+    connections: [],
+    addSubscription: function (conn, topicId, type) {},
+    removeSubscription: function (conn, topicId, type) {},
+    removeConnection: function (conn) {}
+  }
   socket = new net.Socket()
 })
 
@@ -17,6 +24,7 @@ describe('StompConnection', function () {
   it('should create a new connection successfully', function () {
     const connection = new StompConnection(socket, server)
     assert(connection.connected)
+    connection.handleDisconnect()
   })
 
   describe('receiving data', function () {
@@ -27,6 +35,9 @@ describe('StompConnection', function () {
       connection = new StompConnection(socket, server)
       stubFrame = sinon.stub(connection, 'handleFrame')
       stubError = sinon.stub(connection, 'sendError')
+    })
+    afterEach(function () {
+      connection.handleDisconnect()
     })
 
     it('should not call handleFrame an incomplete frame', function () {

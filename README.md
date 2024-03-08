@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/bbc/node-radiovis-stomp-server.svg?branch=master)](https://travis-ci.org/bbc/node-radiovis-stomp-server)
-
 RadioVis STOMP Server
 =====================
 
@@ -12,7 +10,7 @@ User Application Specification_.
 
 ## Running
 
-The recommended version of Node.js is v10.0.0
+The recommended version of Node.js is v20
 
     npm install
     npm start
@@ -48,7 +46,7 @@ To generate a test coverage report:
 
 ## License
 
-Copyright 2017 British Broadcasting Corporation
+Copyright 2017-2024 British Broadcasting Corporation
 
 The RadioVis STOMP Server is free software; you can redistribute it and/or
 modify it under the terms of the Apache License, Version 2.0.
