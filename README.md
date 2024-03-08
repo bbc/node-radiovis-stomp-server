@@ -46,7 +46,7 @@ To generate a test coverage report:
 
 ## License
 
-Copyright 2017 British Broadcasting Corporation
+Copyright 2017-2024 British Broadcasting Corporation
 
 The RadioVis STOMP Server is free software; you can redistribute it and/or
 modify it under the terms of the Apache License, Version 2.0.
