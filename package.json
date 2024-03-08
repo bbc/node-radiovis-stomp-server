@@ -1,6 +1,6 @@
 {
   "name": "radiovis-stomp-server",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "STOMP server implementation for RadioVis",
   "main": "./lib/radiovis-server.js",
   "bin": {
