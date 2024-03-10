@@ -57,6 +57,7 @@ It supports the following confection options:
 | `adminHost`          | `127.0.0.1`     | IP address to bind HTTP admin interface to.        | 
 | `servicesFile`       | `services.json` | JSON file to load list of broadcast services from. |
 | `republishFrequency` | `900`           | How often to re-publish messages to subscribers.   |
+| `wildcard`           | `false`         | Enable support for wildcard bearer in topics (`*`) |
 
 
 ## License
