@@ -60,6 +60,25 @@ It supports the following confection options:
 | `wildcard`           | `false`         | Enable support for wildcard bearer in topics (`*`) |
 
 
+## Testing
+
+BBC R&D have written a GUI python tool called RadioVisDemo which can be useful to test a RadioVis server:
+
+https://github.com/bbc/RadioVisDemo
+
+Or to test using the command-line, you could use the [stomp.py tool] to subscribe to messages:
+
+```
+stomp -H 127.0.0.1 -P 61613 -S 1.0 -L '/topic/fm/ce2/c201/09710/text'
+```
+
+Here is is another example subscribing to all services using a wildcard topic:
+
+```
+stomp -H 127.0.0.1 -P 61613 -S 1.0 -L '/topic/*/text' --verbose
+```
+
+
 ## License
 
 Copyright 2017-2024 British Broadcasting Corporation
@@ -85,6 +104,7 @@ https://creativecommons.org/licenses/by/4.0/
 
 [node.js]:         https://nodejs.org/
 [STOMP protocol]:  https://stomp.github.io/stomp-specification-1.0.html
+[stomp.py tool]:   https://jasonrbriggs.github.io/stomp.py/commandline.html
 [speculate]:       https://github.com/bbc/speculate
 [RadioVis]:        https://en.wikipedia.org/wiki/RadioVIS
 [ETSI TS 101 499]: http://www.etsi.org/deliver/etsi_ts/101400_101499/101499/03.01.01_60/ts_101499v030101p.pdf
